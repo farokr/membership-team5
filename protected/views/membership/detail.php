@@ -176,6 +176,66 @@
             </table>
         </div>
 	</div>
+    
+    <div class="container">
+		<h3>Skills</h3>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th style="font-weight: bold;">#</th>
+                        <th style="font-weight: bold;">Skill Global</th>
+                        <th style="font-weight: bold;">Skill Spesific</th>
+                        <th style="font-weight: bold;">Self Assesment</th>
+                        <th>&nbsp;</th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+                    $num = 1;
+                    foreach ($member_skills as $item_skill):
+                    ?>
+
+                    <tr>
+                        <td>
+                            <?php
+                            echo $num;
+                            ?>
+                        </td>
+
+                        <td>
+                            <?php
+                            echo filter_var(trim($item_skill['skill_parent_name']),FILTER_SANITIZE_STRING);
+                            ?>
+                        </td>
+
+                        <td>
+                            <?php
+                            echo filter_var(trim($item_skill['skill_name']), FILTER_SANITIZE_STRING);
+                            ?>
+                        </td>
+                        
+                        <td>
+                            <?php
+                            echo filter_var(trim($item_skill['skill_self_assesment']), FILTER_SANITIZE_STRING);
+                            ?>
+                        </td>
+
+                         
+                    </tr>
+
+                    <?php
+                    $num++;
+                    endforeach;
+                    ?>
+                </tbody>
+
+            </table>
+        </div>
+	</div>
 
 	<div class="dt-sc-margin50"></div>
 
